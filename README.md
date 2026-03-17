@@ -100,7 +100,8 @@ Enjoy your personalized AI-slop audio book.
 
 
 ### Visual Novel / "Anime" Conversion
-*(Using numbered lines from step 32)*
+(Using numbered lines from step 32)
+
 37. Describe character actions for every line (`qwen_27b`).
 38. Create a list of locations for the chapter (`qwen_27b`).
 39. Assign locations and characters to every line (`qwen_27b`).
