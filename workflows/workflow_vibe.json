@@ -1,0 +1,80 @@
+{
+  "66": {
+    "inputs": {
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "V0",
+      "audioUI": "/api/view?filename=ComfyUI_00597_.mp3&type=output&subfolder=audio&rand=0.5865450680029317",
+      "audio": [
+        "100",
+        0
+      ]
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "Save Audio (MP3)"
+    }
+  },
+  "76": {
+    "inputs": {
+      "text": "%prompt%",
+      "replace_json": "{\n\"...\": \", \",\n\"…\": \", \",\n\"..\": \".\" ,\n\"(\": \"\" ,\n\")\": \".\" ,\n\"  \": \" \",\n\" ,\": \",\",\n\";\": \",\",\n\"*\": \"\",\n\"—\": \"\",\n\":\\\\n\": \".\\\\n\",\n\"\\\"\": \"\"\n}",
+      "output_format": "single_speaker",
+      "name_1": "Автор",
+      "name_2": "Мосс",
+      "name_3": "Рой",
+      "name_4": "Джен",
+      "name_5": "Дуглас",
+      "name_6": "Денхолм"
+    },
+    "class_type": "ReplaceStringMultipleNode",
+    "_meta": {
+      "title": "Replace String Multiple using json"
+    }
+  },
+  "80": {
+    "inputs": {
+      "audio": "me_qwen.wav",
+      "audioUI": "/api/view?filename=me_qwen.wav&type=input&subfolder=&rand=0.8218054432936752"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "LoadAudio"
+    }
+  },
+  "100": {
+    "inputs": {
+      "text": [
+        "76",
+        0
+      ],
+      "model": "VibeVoice-7B-no-llm-bf16",
+      "quantization_mode": "bf16",
+      "exllama_model": "vibevoice-7b-exl3-4bit",
+      "attention_type": "sdpa",
+      "free_memory_after_generate": false,
+      "diffusion_steps": 4,
+      "seed": 2,
+      "cfg_scale": 1.45,
+      "use_sampling": false,
+      "temperature": 0.95,
+      "top_p": 0.95,
+      "streaming_to_audio": false,
+      "streaming_buffer": 1,
+      "negative_llm_steps_to_skip": 0.9,
+      "semantic_steps_to_skip": 1,
+      "increase_cfg": false,
+      "solver_order": "1",
+      "split_by": "newline",
+      "restart_at_garbage": true,
+      "use_compile": true,
+      "speaker1_voice": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "VibeVoiceMultipleSpeakersNodeExl3",
+    "_meta": {
+      "title": "VibeVoice Multiple Speakers Exl3"
+    }
+  }
+}
