@@ -81,7 +81,7 @@ I have already created about 10 adaptations based on sitcoms, anime, and books. 
 Enjoy your personalized AI-slop fan fiction.
 
 
-**Optional: Illustration per each Chapter**
+### Optional: Illustration per each Chapter
 15. Convert chapter text into an image2image prompt (`qwen_27b` or `qwen_35b`).
 16. Generate illustration using prompt + character references (`Klein-9b`).
 17. Compile text and images into an `.fb2` file.
@@ -99,9 +99,7 @@ Enjoy your personalized AI-slop book with illustrations.
 Enjoy your personalized AI-slop audio book.
 
 
-### Visual Novel / "Anime" Conversion
-(Using numbered lines from step 32)
-
+### Visual Novel / "Anime" Conversion (Using numbered lines from step 32)
 37. Describe character actions for every line (`qwen_27b`).
 38. Create a list of locations for the chapter (`qwen_27b`).
 39. Assign locations and characters to every line (`qwen_27b`).
