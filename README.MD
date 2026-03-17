@@ -2,11 +2,11 @@
 
 Creating personalized content: fanfics, audiobooks, and visual novels.
 
-**Watch the demo video on VK: or TG** [LINK]
+**Demo video (in Russian): ** https://disk.yandex.ru/i/BKndy2R19qDEMw or https://t.me/tensorbanana/1287
 
-> **Disclaimer:** The example in the video is not the final result. The final product is defined by the personalization you require (replacement of characters, locations, habits, fetishes, voices, and images). Reading or watching someone else's fanfiction is usually uninteresting as they often feel flat. Personal content, however, is a different story—it is the future.
+> **Disclaimer:** The example in the video is not the final result. The final product is defined by the personalization you require (replacement of characters, locations, habits, fetishes, voices, and images). Reading or watching someone else's fanfiction is usually uninteresting as they often feel flat. Personal content, however, is a different storyâ€”it is the future.
 
-I have already created about 10 adaptations based on sitcoms, anime, and books. 20–40 chapters is the "sweet spot" before it gets repetitive. So far, only two titles have reached the video stage because of the high density of action. I don't recommend using movies or books with serious, complex plots yet; you'll encounter too many plot inconsistencies, which can be frustrating. Sitcoms and anime are perfect. Manga is also an option, but maintaining consistency is difficult. The key "hook" is adding your own personalized details and preferences.
+I have already created about 10 adaptations based on sitcoms, anime, and books. 20â€“40 chapters is the "sweet spot" before it gets repetitive. So far, only two titles have reached the video stage because of the high density of action. I don't recommend using movies or books with serious, complex plots yet; you'll encounter too many plot inconsistencies, which can be frustrating. Sitcoms and anime are perfect. Manga is also an option, but maintaining consistency is difficult. The key "hook" is adding your own personalized details and preferences.
 
 ---
 
@@ -34,15 +34,15 @@ I have already created about 10 adaptations based on sitcoms, anime, and books. 
 ## Known Issues & Workarounds
 
 ### LLM Limitations
-1.  **Chapter Length:** LLMs struggle with long chapters. They are trained for short responses (1k–2k tokens). Beyond that, they loop or hallucinate. 
+1.  **Chapter Length:** LLMs struggle with long chapters. They are trained for short responses (1kâ€“2k tokens). Beyond that, they loop or hallucinate. 
     * *Solution:* Split chapters into parts, then merge and prompt the AI to fix inconsistencies.
 2.  **Language Quality:** Russian output is often more formulaic than English. 
     * *Solution:* Generate in English (even if the source material is Russian) and then translate using `gemma3-27b` or `translategemma-27b`.
 3.  **Multitasking:** Accuracy drops when generating complex JSONs from long text. 
     * *Solution:* Break text into chunks and divide the task into sub-tasks.
 4.  **Censorship:** Uncensored (abliterated) models are often worse at structured tasks like JSON or image prompting. Original models may refuse 18+ content. 
-    * *Solution:* Use a "pipeline" approach—juggle different models for specific tasks.
-5.  **Reasoning Mode:** Reasoning models perform poorly with long texts (50–100 lines), often leading to loops or extreme summarization. 
+    * *Solution:* Use a "pipeline" approachâ€”juggle different models for specific tasks.
+5.  **Reasoning Mode:** Reasoning models perform poorly with long texts (50â€“100 lines), often leading to loops or extreme summarization. 
     * *Solution:* Disable reasoning for the majority of these tasks.
 6.  **Manga Conversion:** I haven't mastered manga-to-prose conversion yet; plot consistency between pages remains an issue.
 
@@ -55,7 +55,7 @@ I have already created about 10 adaptations based on sitcoms, anime, and books. 
 1.  **Likeness:** If you input backgrounds and characters separately, likeness drops significantly. 
     * *Solution:* Use a "pre-frame" (digitally paste characters onto the background first) as the input. It improves likeness but slightly hurts background integration.
 2.  **Extra Limbs:** More characters = more extra hands. 
-    * *Solution:* Limit characters to 2–3 per frame and use the `res_2s` sampler (slower but more accurate).
+    * *Solution:* Limit characters to 2â€“3 per frame and use the `res_2s` sampler (slower but more accurate).
 
 ---
 
@@ -67,7 +67,7 @@ I have already created about 10 adaptations based on sitcoms, anime, and books. 
 02. Split `.srt` files into 100-line segments.
 03. Convert `.srt` segments + summary into dialogues (`qwen3.5-27b`).
 04. Merge dialogues back into a full episode.
-05. Create a 17–20 sentence episode summary (`qwen3.5-35b`).
+05. Create a 17â€“20 sentence episode summary (`qwen3.5-35b`).
 06. (Optional) Replace character names.
 07. Transform dialogues + summary into a full story (`qwen_27b` or `qwen_35b`).
 08. Rewrite to eliminate plot/dialogue inconsistencies (`qwen_27b`).
